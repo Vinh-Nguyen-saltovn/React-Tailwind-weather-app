@@ -6,6 +6,11 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
+.yarn/cache/
+.yarn/install-state.gz
+.pnp.*
+
+
 
 node_modules
 dist
