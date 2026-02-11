@@ -105,7 +105,7 @@ export default function Login() {
             <h1 className="text-5xl">Form đăng nhập</h1>
             <section className="space-y-2 mt-12">
               <input
-                type="email"
+                type="text"
                 placeholder="nhập username ..."
                 className="border border-slate-400 rounded-lg p-2 w-full"
                 value={username}
