@@ -57,7 +57,7 @@ export default function Login() {
     }
 
     if (password.length < 6) {
-      toast.error('UserName phải từ 6 ký tự trở lên')
+      toast.error('Username phải từ 6 ký tự trở lên')
       return
     }
 
@@ -106,7 +106,7 @@ export default function Login() {
             <section className="space-y-2 mt-12">
               <input
                 type="email"
-                placeholder="nhập email ..."
+                placeholder="nhập username ..."
                 className="border border-slate-400 rounded-lg p-2 w-full"
                 value={username}
                 onChange={e => setUsername(e.target.value)}
