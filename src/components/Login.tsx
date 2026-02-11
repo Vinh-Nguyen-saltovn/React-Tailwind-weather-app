@@ -56,7 +56,7 @@ export default function Login() {
       return
     }
 
-    if (password.length < 6) {
+    if (username.length < 6) {
       toast.error('Username phải từ 6 ký tự trở lên')
       return
     }
