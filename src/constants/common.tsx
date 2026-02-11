@@ -1,9 +1,9 @@
 export const DEFAULT_BG = {
-  light: 'bg-white text-slate-800',
+  light: 'bg-slate-100 text-slate-700',
   dark: 'bg-slate-800 text-slate-100',
 }
 
 export const HOVER_BG = {
-  light: 'hover:bg-slate-100',
+  light: 'hover:bg-slate-200',
   dark: 'hover:bg-slate-700',
 }

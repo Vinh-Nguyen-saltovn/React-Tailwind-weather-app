@@ -1,6 +1,7 @@
 import { Sun, Moon } from 'lucide-react'
-import { DEFAULT_BG } from '../constants/common'
+import { DEFAULT_BG, HOVER_BG } from '../constants/common'
 import Icon from './Icon'
+import UserInfo from './UserInfo'
 
 interface HeaderProps {
   darkMode: boolean
@@ -9,6 +10,7 @@ interface HeaderProps {
 
 export default function Header({ darkMode, setDarkMode }: HeaderProps) {
   const theme = darkMode ? 'dark' : 'light'
+  const user = JSON.parse(localStorage.getItem('user') || 'null')
 
   return (
     <header
@@ -24,9 +26,17 @@ export default function Header({ darkMode, setDarkMode }: HeaderProps) {
         />
         <h1 className={`text-2xl font-semibold`}>Weather App</h1>
       </section>
-      <button onClick={() => setDarkMode(!darkMode)} className="p-2 rounded-lg">
-        {darkMode ? <Sun size={24} /> : <Moon size={24} />}
-      </button>
+      <section
+        className={`w-[300px] d-flex  ${user ? 'justify-between' : 'justify-end'}`}
+      >
+        <UserInfo darkMode={darkMode} user={user} />
+        <button
+          onClick={() => setDarkMode(!darkMode)}
+          className={`p-2 rounded-lg ${HOVER_BG[theme]}`}
+        >
+          {darkMode ? <Sun size={24} /> : <Moon size={24} />}
+        </button>
+      </section>
     </header>
   )
 }
