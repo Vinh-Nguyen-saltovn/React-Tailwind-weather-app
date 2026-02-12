@@ -13,13 +13,8 @@ export async function loginWithGithub() {
 
   const user = {
     name: info._tokenResponse?.fullName,
-    picture: result.user.photoURL || '/default-avatar.webp',
-    email: result.user.email,
+    picture: result.user.photoURL,
   }
-  console.log('FULL RESULT:', result)
-  console.log('User data saved:', user)
-
   localStorage.setItem('user', JSON.stringify(user))
-
   return user
 }

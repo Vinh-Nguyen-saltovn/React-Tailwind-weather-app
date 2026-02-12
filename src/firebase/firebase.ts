@@ -1,10 +1,15 @@
 import { initializeApp } from 'firebase/app'
 import { getAuth } from 'firebase/auth'
+import {
+  API_KEY_FIREBASE,
+  AUTH_DOMAIN_FIREBASE,
+  PROJECT_ID_FIREBASE,
+} from '../constants/env'
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyAyr358lufxyCBeLVGgnIxNb91-mmKiiXk',
-  authDomain: 'my-react-weather-app-1c693.firebaseapp.com',
-  projectId: 'my-react-weather-app-1c693',
+  apiKey: API_KEY_FIREBASE,
+  authDomain: AUTH_DOMAIN_FIREBASE,
+  projectId: PROJECT_ID_FIREBASE,
 }
 
 const app = initializeApp(firebaseConfig)

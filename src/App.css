@@ -1,9 +1,15 @@
 @import 'tailwindcss';
 @theme {
-  --color-primary: oklch(27.9% 0.041 260.031);
+  --bg-light: theme(colors.slate.100);
+  --bg-dark: theme(colors.slate.800);
+
+  --text-light: theme(colors.slate.700);
+  --text-dark: theme(colors.slate.100);
+
+  --hover-bg-light: theme(colors.slate.200);
+  --hover-bg-dark: theme(colors.slate.700);
 }
+
 @utility d-flex {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @apply flex justify-center items-center;
 }

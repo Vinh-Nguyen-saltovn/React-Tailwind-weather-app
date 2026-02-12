@@ -1,28 +1,15 @@
 interface IconProps {
   darkMode: boolean
-  darkHeight: number
-  darkWidth: number
-  lightHeight: number
-  lightWidth: number
+  darkClass?: string
+  lightClass?: string
 }
-export default function Icon({
-  darkMode,
-  darkHeight,
-  darkWidth,
-  lightHeight,
-  lightWidth,
-}: IconProps) {
+export default function Icon({ darkMode, darkClass, lightClass }: IconProps) {
   return (
     <>
       {darkMode ? (
-        <img
-          src="/logo_white.webp"
-          alt=""
-          height={darkHeight}
-          width={darkWidth}
-        />
+        <img src="/logo_white.webp" alt="" className={darkClass} />
       ) : (
-        <img src="/logo.svg" alt="" height={lightHeight} width={lightWidth} />
+        <img src="/logo.svg" className={lightClass} alt="" />
       )}
     </>
   )
