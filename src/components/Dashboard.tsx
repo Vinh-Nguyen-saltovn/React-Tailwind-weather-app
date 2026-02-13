@@ -50,6 +50,7 @@ export default function Dashboard() {
   if (!user) {
     return <Navigate to="/login" replace />
   }
+  console.log('>>> DASHBOARD USER =', localStorage.getItem('user'))
 
   // hàm fetch để gọi 2 api
   async function fetchSearchCity() {
