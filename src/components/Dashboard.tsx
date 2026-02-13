@@ -4,6 +4,7 @@ import { useState } from 'react'
 import SubmitButton from './Submit-button'
 import { CLICKED_BG, DEFAULT_BG, HOVER_BG } from '../constants/theme'
 import { getCoordinates, getWeatherFromCoordinates } from '../auth/openweather'
+import { Navigate } from 'react-router-dom'
 
 interface WeatherData {
   city: string
@@ -44,6 +45,11 @@ export default function Dashboard() {
   const [city, setCity] = useState<string>('')
   const [weather, setWeather] = useState<WeatherData>(defaultWeather)
   const [error, setError] = useState<string | null>(null)
+  const user = localStorage.getItem('user')
+
+  if (!user) {
+    return <Navigate to="/login" replace />
+  }
 
   // hàm fetch để gọi 2 api
   async function fetchSearchCity() {
